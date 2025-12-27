@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Pohon di Tanah Kering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #243949, #0f2027);
+    font-family: Georgia, serif;
+    color: #f5f5f5;
+    overflow-x: hidden;
+}
+
+/* HUJAN */
+.rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+        transparent,
+        transparent 5px,
+        rgba(255,255,255,0.08) 6px
+    );
+    animation: rain 0.8s linear infinite;
+    z-index: 1;
+}
+
+@keyframes rain {
+    from { background-position: 0 0; }
+    to { background-position: 0 40px; }
+}
+
+/* POHON */
+.tree {
+    position: fixed;
+    bottom: -40px;
+    right: -60px;
+    font-size: 420px;
+    opacity: 0.06;
+    z-index: 0;
+}
+
+/* BOX */
+.wrapper {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    background: rgba(0,0,0,0.45);
+    padding: 40px 32px;
+    max-width: 760px;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 22px;
+}
+
+p {
+    line-height: 1.9;
+    font-size: 17px;
+    opacity: 0;
+    animation: muncul 1.4s ease forwards;
+}
+
+input, button {
+    padding: 11px 26px;
+    border-radius: 25px;
+    border: 1px solid #f5f5f5;
+    background: transparent;
+    color: #f5f5f5;
+    font-size: 15px;
+    margin-top: 18px;
+}
+
+button:hover {
+    background: #f5f5f5;
+    color: #111;
+    cursor: pointer;
+}
+
+.hidden { display: none; }
+
+.penutup {
+    margin-top: 36px;
+    text-align: right;
+    font-style: italic;
+    opacity: 0.75;
+    font-size: 15px;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+@keyframes muncul {
+    to {opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="rain"></div>
+<div class="tree">🌳</div>
+
+<div class="wrapper">
+
+<!-- LOGIN -->
+<div class="box" id="login">
+    <h1>Untuk Satu Jiwa</h1>
+    <p style="opacity:1">
+        Tidak semua kata ingin ditemukan,<br>
+        sebagian hanya ingin dijaga.
+    </p>
+    <input type="password" id="pass" placeholder="Kata kunci">
+    <br>
+    <button onclick="cek()">Masuk</button>
+</div>
+
+<!-- COVER -->
+<div class="box hidden" id="cover">
+    <h1>Fatma Risalatul Ma'wa</h1>
+    <p style="opacity:1">
+        Bacalah dengan pelan,<br>
+        sebagaimana ia ditulis<br>
+        tanpa ingin dimengerti siapa pun.
+    </p>
+    <button onclick="buka()">Masuk ke Puisinya</button>
+</div>
+
+<!-- PUISI -->
+<div class="box hidden" id="puisi">
+<h1>Pohon di Tanah Kering</h1>
+
+<p style="animation-delay:0.6s">
+Aku menulis ini<br>
+bukan untuk dibaca banyak orang,<br>
+hanya untuk satu jiwa<br>
+yang diam-diam mengubahku.
+</p>
+
+<p style="animation-delay:1.6s">
+Aku adalah tanah<br>
+yang lama lupa rasanya hujan,<br>
+retak oleh harapan<br>
+yang lebih sering pergi<br>
+dan lupa pulang.
+</p>
+
+<p style="animation-delay:2.6s">
+Kau datang tanpa suara,<br>
+tanpa janji yang dibungkus kata,<br>
+membawa duka yang kau simpan rapi<br>
+dari kehilangan yang tak bersuara,<br>
+lalu memilih bersandar<br>
+tanpa meminta apa pun dariku.
+</p>
+
+<p style="animation-delay:3.8s">
+Aku hanya mendengar,<br>
+seperti bumi yang tak pernah menolak hujan,<br>
+menyimak setiap getar suaramu<br>
+yang basah oleh air mata.<br>
+Aku tak pernah berniat<br>
+menanam harap di dadamu,<br>
+namun di atasku<br>
+kau justru bertumbuh.
+</p>
+
+<p style="animation-delay:5.2s">
+Pelan-pelan kau menjadi pohon,<br>
+akarmu menyentuh bagian diriku<br>
+yang bahkan tak kukenal,<br>
+daunmu mengajarkanku teduh,<br>
+rantingmu mengingatkanku pada sabar,<br>
+dan buahmu<br>
+ketenangan yang lama tak kutemui.
+</p>
+
+<p style="animation-delay:6.8s">
+Dari caramu bertahan,<br>
+aku belajar bahwa cinta<br>
+bukan tentang saling melukai lalu bertahan,<br>
+melainkan tentang pulang<br>
+ke jiwa yang tak ingin pergi.
+</p>
+
+<p style="animation-delay:8.2s">
+Jika suatu hari usia merunduk<br>
+dan kata-kata tak lagi cukup,<br>
+biarlah aku tetap menjadi tanah<br>
+tempatmu berpijak,<br>
+dan kau tetap menjadi pohon<br>
+yang menaungiku<br>
+hingga waktu benar-benar selesai.
+</p>
+
+
+<div class="penutup">
+— MasKumis<br>
+10 Desember 2025
+</div>
+</div>
+
+</div>
+
+<audio id="musik" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_42b1a5f6c1.mp3">
+</audio>
+
+<script>
+const PASSWORD = "Bocil Kesayangan";
+
+function cek() {
+    if(document.getElementById("pass").value === PASSWORD) {
+        login.classList.add("hidden");
+        cover.classList.remove("hidden");
+    } else {
+        alert("Kata kunci tidak tepat.");
+    }
+}
+
+function buka() {
+    cover.classList.add("hidden");
+    puisi.classList.remove("hidden");
+    musik.play();
+}
+</script>
+
+</body>
+</html>
